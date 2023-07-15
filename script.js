@@ -24,6 +24,12 @@ function playSelectionSort(){
     animateSelectionSort(moves);
 }
 
+// function playInsertionSort(){
+//     const copy = [...arr];
+//     const moves = insertionSort(copy);
+//     animateInsertionSort(moves);
+// }
+
 
 function displayBars(move){
     container.innerHTML ="";
