@@ -13,19 +13,12 @@ function bubbleSort(arr){
     return moves;
 }
 
-function animateBubbleSort(moves){
-    if(moves.length == 0){
-        displayBars();
-        return;
-    }
-    const move = moves.shift();
-    const [i,j] = move.indices;
-    if(move.moveType === "change"){
-        [arr[i],arr[j]] = [arr[j],arr[i]];
-    }
-    displayBars(move);
-    setTimeout(function(){
-        animateBubbleSort(moves);
-    },50);
-}
+function animateBubbleSort(moves) {
+    animate(moves);
+  }
+
+function playBubbleSort() {
+    playSort(bubbleSort);
+  }
+  
 

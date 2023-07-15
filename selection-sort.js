@@ -14,18 +14,10 @@ function selectionSort(arr){
     return moves;
 }
 
-function animateSelectionSort(moves){
-    if(moves.length == 0){
-        displayBars();
-        return;
-    }
-    const move = moves.shift();
-    const [i,j] = move.indices;
-    if(move.moveType === "change"){
-        [arr[i],arr[j]] = [arr[j],arr[i]];
-    }
-    displayBars(move);
-    setTimeout(function(){
-        animateSelectionSort(moves);
-    },50);
-}
+function animateSelectionSort(moves) {
+    animate(moves);
+  }
+
+  function playSelectionSort() {
+    playSort(selectionSort);
+  }
