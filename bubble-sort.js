@@ -1,7 +1,4 @@
 
-
-
-
 function bubbleSort(arr){
     const moves = []; 
     for(let i = 0; i < arr.length; i++){
@@ -16,25 +13,19 @@ function bubbleSort(arr){
     return moves;
 }
 
-function playBubbleSort(){
-    const copy = [...arr];
-    const moves = bubbleSort(copy);
-    animate(moves);
-}
-
-function animate(moves){
+function animateBubbleSort(moves){
     if(moves.length == 0){
         displayBars();
         return;
     }
     const move = moves.shift();
     const [i,j] = move.indices;
-    if(move.moveType == "change"){
+    if(move.moveType === "change"){
         [arr[i],arr[j]] = [arr[j],arr[i]];
     }
     displayBars(move);
     setTimeout(function(){
-        animate(moves);
+        animateBubbleSort(moves);
     },50);
 }
 
