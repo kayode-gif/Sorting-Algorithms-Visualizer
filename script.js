@@ -1,6 +1,8 @@
 
 const n = 40;
 const arr = [];
+let animationTimeout;
+let pauseAnimation = false;
 
 reset();
 
@@ -10,6 +12,7 @@ function reset(){
     }
     displayBars();
 }
+
 
 function playSort(sortAlgorithm) {
     const copy = [...arr];
@@ -28,13 +31,15 @@ function animate(moves) {
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     displayBars(move);
+    
     setTimeout(function () {
       animate(moves);
     }, 50);
   }
-  
+
   
 function displayBars(move){
+    const container = document.getElementById("container");
     container.innerHTML ="";
     for(let i = 0; i < arr.length; i++) {
         const bar = document.createElement('div');
