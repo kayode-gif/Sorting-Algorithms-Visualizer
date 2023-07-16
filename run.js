@@ -13,8 +13,6 @@ function reset(){
     displayBars();
 }
 
-
-
 function playSort(sortAlgorithm) {
   if(isSorting) return;
   isSorting = true;
@@ -25,6 +23,20 @@ function playSort(sortAlgorithm) {
   disableSliders();
   disableButtons();
   }
+
+  // DISTINCT INSERTION SORT 
+
+  function playSortInsertionSort(sortAlgorithm) {
+    if(isSorting) return;
+    isSorting = true;
+    const copy = [...arr];
+    const moves = sortAlgorithm(copy);
+    animateInsertionSort(moves);
+    disableAndHideDropdown();
+    disableSliders();
+    disableButtons();
+    }
+  
 
 
 function displayBars(move){
@@ -50,9 +62,6 @@ function displayBars(move){
         container.appendChild(bar);
     }
 }
-  
-  
-  
   
   
 

@@ -14,12 +14,6 @@ function bubbleSort(arr){
     return moves;
 }
 
-function animateBubbleSort(moves) {
-    animate(moves);
-  }
-
 function playBubbleSort() {
     playSort(bubbleSort);
   }
-  
-
