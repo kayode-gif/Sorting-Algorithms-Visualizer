@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sorting Visualiser</h1>
-    <div id="container"></div>
+        <h1>Sorting Visualiser</h1>
+        <div class="button-container">
+            <button id="toggle-mode-btn">Mode</button>
+            <button onClick="reset()">Randomise </button>
+            <div id ="size-bars">Size</div>
+        <input type="range" min=""4 max="100" id="change-size-bars">
+        <div id ="speed-bars">Speed</div>
+        <input type="range" min=""0 max="100" id="change-speed-bars">
+            <button onClick="playBubbleSort()">Bubble Sort</button>
+            <button onClick="playSelectionSort()">Selection Sort</button>
+            <button onClick="playInsertionSort()">Insertion Sort</button>
+        </div>
     <hr>
-    <div>
-        <button onClick="reset()">Reset</button>
-        <button onClick="playBubbleSort()">Bubble Sort</button>
-        <button onClick="playSelectionSort()">Selection Sort</button>
-        <button onClick="playInsertionSort()">Insertion Sort</button>
-    </div>
-    <script src="script.js"></script>
+    <div id="container"></div>
+    <script src="run.js"></script>
+    <script src="handle-animation.js"></script>
     <script src="bubble-sort.js"></script>
     <script src="selection-sort.js"></script>
     <script src="insertion-sort.js"></script>

@@ -1,4 +1,5 @@
 
+// This file handles the option to bubble sort for the visualiser 
 function bubbleSort(arr){
     const moves = []; 
     for(let i = 0; i < arr.length; i++){

@@ -1,8 +1,8 @@
 
-const n = 40;
-const arr = [];
-let animationTimeout;
-let pauseAnimation = false;
+let n = 40;
+let arr = []
+let animationSpeed = 10;
+
 
 reset();
 
@@ -34,7 +34,7 @@ function animate(moves) {
     
     setTimeout(function () {
       animate(moves);
-    }, 50);
+    }, getAnimationSpeed());
   }
 
   
@@ -47,7 +47,7 @@ function displayBars(move){
         bar.classList.add("bar");
         if (move && move.indices.includes(i)){
             bar.style.backgroundColor =
-            move.moveType == "change" ? "red" : "blue";
+            move.moveType == "change" ? "green" : "red";
         }
         container.appendChild(bar);
     }

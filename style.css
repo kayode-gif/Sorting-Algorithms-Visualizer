@@ -1,19 +1,104 @@
-#container{
-    height: 200px;
+#container {
+    height: 400px;
     display: flex;
     align-items: flex-end;
-
-}
-
-body{
+    margin-top: auto;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  
+  .dark-mode body,
+  .dark-mode h1 {
+    color: white;
+  }
+  
+  .bar {
+    width: 10px;
+    background-color: cornflowerblue;
+    margin: 1px;
+    transition: height 0.5s ease-in-out;
+    border-radius: 1px;
+  }
+  
+  h1 {
+    font-family: monospace;
+    font-size: 40px;
+    display: flex;
+    margin: 0;
+  }
+  
+  .button-container {
+    margin-left: 20px;
+  }
+  
+ 
+  #size-bars {
+    font-family: monospace;
+    display: inline-block;
+  }
+  
+  #change-size-bars {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  #speed-bars {
+    font-family: monospace;
+    display: inline-block;
+  }
+  
+  #change-speed-bars {
+    margin-right: 20px;
+    font-size: 15px;
+    cursor:pointer;
+  }
+
+  /* Add this CSS to style.css */
+
+/* Styles for the range input track */
+input[type="range"] {
+  /* Set the height of the track */
+  height: 5px;
+  /* Set the width of the track */
+  width: 200px;
+  /* Remove the default styles */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Set the background color of the track */
+  background-color: #ccc; /* Change this to your desired color */
+  /* Set the outline and border to none */
+  outline: none;
+  border: none;
 }
 
-.bar{
-    width: 10px;
-    background-color: green;
-    margin: 1px;
+input[type="range"]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: fuchsia;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
+input[type="range"]:active::-webkit-slider-thumb {
+  background-color: dodgerblue;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  /* Change the background color of the thumb when sliding */
+  background-color: dodgerblue; /* Change this to your desired color */
 }
