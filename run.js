@@ -41,5 +41,16 @@ function displayBars(move){
         container.appendChild(bar);
     }
 }
+  
+  
+  
+  
+  
+
+
+
+
+
+
 
 

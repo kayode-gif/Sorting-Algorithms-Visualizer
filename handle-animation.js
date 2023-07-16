@@ -6,6 +6,7 @@ function animate(moves) {
     if (moves.length === 0) {
       displayBars();
       isSorting = false;
+      enableSliders();
       enableDropdown();
       enableButtons();
 
@@ -22,6 +23,14 @@ function animate(moves) {
       animate(moves);
     }, getAnimationSpeed());
   }
+
+  function enableSliders(){
+    const sizeInput = document.getElementById("change-size-bars");
+    const speedInput = document.getElementById("change-speed-bars");
+    sizeInput.disabled = false;
+    speedInput.disabled = false;
+  }
+
 
   function disableSliders(){
     const sizeInput = document.getElementById("change-size-bars");
@@ -44,11 +53,6 @@ function animate(moves) {
     });
   }
 
-  function disableAndHideDropdown(){
-    const sortDropdown = document.getElementById("sort-dropdown");
-    sortDropdown.disabled = true;
-    sortDropdown.style.display = "none";
-  }
 
   function enableDropdown() {
     const sortDropdown = document.getElementById("sort-dropdown");
@@ -56,7 +60,11 @@ function animate(moves) {
     sortDropdown.style.display = "block";
   }
 
-
+  function disableAndHideDropdown(){
+    const sortDropdown = document.getElementById("sort-dropdown");
+    sortDropdown.disabled = true;
+    sortDropdown.style.display = "none";
+  }
 
 function handleSizeChange() {
     const barSizeInput = document.getElementById("change-size-bars");
