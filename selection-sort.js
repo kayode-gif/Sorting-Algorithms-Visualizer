@@ -15,11 +15,6 @@ function selectionSort(arr){
     return moves;
 }
 
-
-function animateSelectionSort(moves) {
-    animate(moves);
-  }
-
   function playSelectionSort() {
     playSort(selectionSort);
   }

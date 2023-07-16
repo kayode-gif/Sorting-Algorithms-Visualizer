@@ -24,6 +24,30 @@ function animate(moves) {
     }, getAnimationSpeed());
   }
 
+  // ANIMATE INSERTION SORT IS ON ITS OWN 
+  function animateInsertionSort(moves) {
+    if (moves.length === 0) {
+      displayBars();
+      isSorting = false;
+      enableSliders();
+      enableDropdown();
+      enableButtons();
+  
+      return;
+    }
+    const move = moves.shift();
+    const [i, j] = move.indices;
+    if (move.moveType === "change") {
+      if(i > j){
+        [arr[i],arr[j]] = [arr[j],arr[i]];
+      }
+    }
+    displayBars(move);
+    setTimeout(function () {
+        animateInsertionSort(moves);
+      }, getAnimationSpeed());
+    }
+
   function enableSliders(){
     const sizeInput = document.getElementById("change-size-bars");
     const speedInput = document.getElementById("change-speed-bars");
@@ -122,7 +146,3 @@ document.getElementById("change-size-bars").addEventListener("input", handleSize
     toggleModeButton.textContent = "Dark Mode"
   }
   }
-
-
-
-  
