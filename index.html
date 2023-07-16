@@ -7,18 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <h1>Sorting Visualiser</h1>
-        <div class="button-container">
-            <button id="toggle-mode-btn">Mode</button>
-            <button onClick="reset()">Randomise </button>
-            <div id ="size-bars">Size</div>
-        <input type="range" min=""4 max="100" id="change-size-bars">
-        <div id ="speed-bars">Speed</div>
+    <h1>Sorting Visualiser</h1>
+    <div class="button-container">
+        <button id="toggle-mode-btn">Dark Mode</button>
+        <button onClick="reset()">Randomise</button>
+        <div id="size-bars">Size</div>
+        <input type="range" min=""0 max="100" id="change-size-bars">
+        <div id="speed-bars">Speed</div>
         <input type="range" min=""0 max="100" id="change-speed-bars">
-            <button onClick="playBubbleSort()">Bubble Sort</button>
-            <button onClick="playSelectionSort()">Selection Sort</button>
-            <button onClick="playInsertionSort()">Insertion Sort</button>
+        <div class="dropdown" id="sort-dropdown">
+            <div class="select">
+                <span class="selected">Choose</span>
+                <div class="caret"></div>
+                <ul class="menu">
+                    <li onClick="playBubbleSort()">Bubble Sort</li>
+                    <li onClick="playSelectionSort()">Selection Sort</li>
+                    <li onClick="playInsertionSort()">Insertion Sort</li>
+                </ul>
+            </div>
         </div>
+    </div>
     <hr>
     <div id="container"></div>
     <script src="run.js"></script>
@@ -28,3 +36,9 @@
     <script src="insertion-sort.js"></script>
 </body>
 </html>
+
+
+
+
+
+

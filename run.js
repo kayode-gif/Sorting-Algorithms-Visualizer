@@ -1,8 +1,8 @@
 
 let n = 40;
 let arr = []
-let animationSpeed = 10;
 
+let isSorting = false;
 
 reset();
 
@@ -14,30 +14,19 @@ function reset(){
 }
 
 
+
 function playSort(sortAlgorithm) {
-    const copy = [...arr];
-    const moves = sortAlgorithm(copy);
-    animate(moves);
+  if(isSorting) return;
+  isSorting = true;
+  const copy = [...arr];
+  const moves = sortAlgorithm(copy);
+  animate(moves);
+  disableAndHideDropdown();
+  disableSliders();
+  disableButtons();
   }
 
-function animate(moves) {
-    if (moves.length === 0) {
-      displayBars();
-      return;
-    }
-    const move = moves.shift();
-    const [i, j] = move.indices;
-    if (move.moveType === "change") {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    displayBars(move);
-    
-    setTimeout(function () {
-      animate(moves);
-    }, getAnimationSpeed());
-  }
 
-  
 function displayBars(move){
     const container = document.getElementById("container");
     container.innerHTML ="";
@@ -52,3 +41,5 @@ function displayBars(move){
         container.appendChild(bar);
     }
 }
+
+

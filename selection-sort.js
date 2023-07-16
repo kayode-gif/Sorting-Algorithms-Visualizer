@@ -1,4 +1,4 @@
-// // This file handles the option to selection sort for the visualiser 
+// // This file concerns selection sort 
 function selectionSort(arr){
     const moves = [];
     for(let i=0;i<arr.length - 1;i++){

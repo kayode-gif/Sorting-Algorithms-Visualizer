@@ -1,8 +1,9 @@
 #container {
     height: 400px;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     margin-top: auto;
+    margin-bottom: 20px; 
   }
   
   body {
@@ -24,6 +25,10 @@
   .dark-mode h1 {
     color: white;
   }
+
+  .dark-mode .menu li {
+    color: black;
+  }
   
   .bar {
     width: 10px;
@@ -39,15 +44,12 @@
     display: flex;
     margin: 0;
   }
-  
-  .button-container {
-    margin-left: 20px;
-  }
-  
- 
+
   #size-bars {
+    font-size: 20px;
     font-family: monospace;
     display: inline-block;
+    margin-left: 20px; 
   }
   
   #change-size-bars {
@@ -56,6 +58,7 @@
   }
   
   #speed-bars {
+    font-size: 20px;
     font-family: monospace;
     display: inline-block;
   }
@@ -66,20 +69,93 @@
     cursor:pointer;
   }
 
-  /* Add this CSS to style.css */
 
-/* Styles for the range input track */
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 20px;
+    border: none; 
+    cursor: pointer;
+    padding: 0; 
+    outline: none;
+  }
+
+  .button-container button {
+    border: none;
+    font-family: monospace;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .dark-mode .button-container button {
+    color: white;
+  }
+
+  .button-container button:hover {
+    color: fuchsia; /* Set the color to purple on hover */
+  }
+  
+  .dark-mode .button-container button {
+    color: white;
+  }
+  
+  .dark-mode .button-container button:hover{
+    color: fuchsia; /* Set the color to purple on hover and when focused in dark mode */
+  }
+  
+  .dropdown {
+    outline: black;
+    border: black;
+    font-family: monospace;
+    font-size: 20px;
+    position: relative;
+    margin-left: 20px;
+    flex-wrap: wrap;
+    z-index: 1;
+  }
+  
+  .menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  
+  .select:hover .menu {
+    display: block;
+  }
+
+  .select .selected:hover {
+    color: fuchsia;
+  }
+  
+  .menu li {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .menu li:hover {
+    background-color: #f2f2f2;
+    color: fuchsia;
+  }
+
+
 input[type="range"] {
-  /* Set the height of the track */
   height: 5px;
-  /* Set the width of the track */
   width: 200px;
-  /* Remove the default styles */
   -webkit-appearance: none;
   appearance: none;
-  /* Set the background color of the track */
-  background-color: #ccc; /* Change this to your desired color */
-  /* Set the outline and border to none */
+  background-color: #ccc;
   outline: none;
   border: none;
 }
@@ -92,13 +168,4 @@ input[type="range"]::-webkit-slider-thumb {
   transition: background-color 0.3s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
-}
-
-input[type="range"]:active::-webkit-slider-thumb {
-  background-color: dodgerblue;
-}
-
-input[type="range"]::-webkit-slider-thumb:active {
-  /* Change the background color of the thumb when sliding */
-  background-color: dodgerblue; /* Change this to your desired color */
 }
