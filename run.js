@@ -30,9 +30,18 @@ function playSort(sortAlgorithm) {
 function displayBars(move){
     const container = document.getElementById("container");
     container.innerHTML ="";
+
+    const barSizeInput = document.getElementById("change-size-bars");
+    const newSize = parseInt(barSizeInput.value);
+    const barWidth = 500 / newSize; // Calculate the new width of the bars
+
+
     for(let i = 0; i < arr.length; i++) {
         const bar = document.createElement('div');
         bar.style.height = arr[i] * 100 + "%";
+
+        bar.style.width = barWidth + "px"; // Set the new width of the bars
+
         bar.classList.add("bar");
         if (move && move.indices.includes(i)){
             bar.style.backgroundColor =

@@ -84,8 +84,16 @@ function handleSizeChange() {
     }
     n = newSize;
     reset();
+
+    const container = document.getElementById("container");
+    const barElements = container.getElementsByClassName("bar");
+    const barWidth = 500 / newSize; // Adjust the width of the bars based on the new size
+
+  for (let i = 0; i < barElements.length; i++) {
+    barElements[i].style.width = barWidth + "px"; // Set the updated width of the bars
   }
-  document.getElementById("change-size-bars").addEventListener("input", handleSizeChange);
+}
+document.getElementById("change-size-bars").addEventListener("input", handleSizeChange);
 
 
   
