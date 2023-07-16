@@ -1,23 +1,24 @@
+
 function insertionSort(arr){
     const moves = [];
-    for(i = 1; i < arr.length; i++){
-       let key = arr[i];
-       let j = i-1;
-       while (j >= 0 && arr[j] > key){
-        moves.push({indices: [key,j+1], moveType: "compare"});
+    for(let i = 1; i < arr.length; i++){
+      let numberToInsert = arr[i];
+      let j = i - 1;
+      moves.push({indices: [i,j], moveType: "compare"});
+      while((j >= 0) && arr[j] > numberToInsert){
+        moves.push({indices: [j+1,j], moveType: "change"});
         arr[j+1] = arr[j];
-        moves.push({indices: [key,j+1], moveType: "changes"});
-        j--;
-       }
-       arr[j+1] = key;
+        j = j - 1;
+      }
+      moves.push({indices: [j+1,i], moveType: "change"});
+      arr[j+1] = numberToInsert;
     }
     return moves;
   }
-
-  function animateInsertionSort(moves) {
-    animate(moves);
-  }
-
+  
   function playInsertionSort() {
-    playSort(insertionSort);
-  }
+      playSortInsertionSort(insertionSort);
+    }
+
+  
+  
