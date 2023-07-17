@@ -13,6 +13,7 @@ function reset(){
     displayBars();
 }
 
+
 function playSort(sortAlgorithm) {
   if(isSorting) return;
   isSorting = true;
@@ -36,6 +37,7 @@ function playSort(sortAlgorithm) {
     disableSliders();
     disableButtons();
     }
+    ///////////////////////
   
 
 

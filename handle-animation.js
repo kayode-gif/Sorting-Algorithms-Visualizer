@@ -1,6 +1,11 @@
 // This file is responsible for the changes to animation of the sorting 
 
 let animationSpeed = 10;
+let audioSound = null;
+let audioEnabled = true;
+const MIN_FREQ = 200;
+const MAX_FREQ = 600;
+
 
 function animate(moves) {
     if (moves.length === 0) {
@@ -17,8 +22,9 @@ function animate(moves) {
     if (move.moveType === "change") {
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+    playSound(MIN_FREQ+ arr[i] * MAX_FREQ);
+    playSound(MIN_FREQ+ arr[j] * MAX_FREQ);
     displayBars(move);
-    
     setTimeout(function () {
       animate(moves);
     }, getAnimationSpeed());
@@ -42,11 +48,14 @@ function animate(moves) {
         [arr[i],arr[j]] = [arr[j],arr[i]];
       }
     }
+    playSound(MIN_FREQ+ arr[i] * MAX_FREQ);
+    playSound(MIN_FREQ+ arr[j] * MAX_FREQ);
     displayBars(move);
     setTimeout(function () {
         animateInsertionSort(moves);
       }, getAnimationSpeed());
     }
+    //////////////
 
   function enableSliders(){
     const sizeInput = document.getElementById("change-size-bars");
@@ -146,3 +155,37 @@ document.getElementById("change-size-bars").addEventListener("input", handleSize
     toggleModeButton.textContent = "Dark Mode"
   }
   }
+
+
+  // This is to allow the user to set if the sound off or on
+
+const toggleSoundButton = document.getElementById("toggle-sound");
+toggleSoundButton.addEventListener("click", toggleSound);
+
+function toggleSound() {
+  audioEnabled = !audioEnabled;
+  toggleSoundButton.textContent = audioEnabled ? "Sound On" : "Sound Off";
+}
+
+// adding sound to the bars if user would like that using webaudio api
+// (adding sound could help people with vision loss using the sound)
+function playSound(music){
+  if(!audioEnabled){
+    return;
+  }
+  if(audioSound == null){
+      audioSound = new(AudioContext || webAudioContext
+          || window.webkitAudioContext)();
+  }
+  const music_duration = 0.1;
+  const oscilator = audioSound.createOscillator();
+  oscilator.frequency.value = music;
+  oscilator.start();
+  oscilator.stop(audioSound.currentTime + music_duration);
+  const node = audioSound.createGain();
+  node.gain.value = 0.1;
+  node.gain.linearRampToValueAtTime(0, audioSound.currentTime +music_duration);
+  oscilator.connect(node);
+  node.connect(audioSound.destination);
+}
+
