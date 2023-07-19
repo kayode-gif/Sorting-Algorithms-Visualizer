@@ -25,20 +25,19 @@ function playSort(sortAlgorithm) {
   disableButtons();
   }
 
-  // DISTINCT INSERTION SORT 
 
-  function playSortInsertionSort(sortAlgorithm) {
-    if(isSorting) return;
-    isSorting = true;
-    const copy = [...arr];
-    const moves = sortAlgorithm(copy);
-    animateInsertionSort(moves);
-    disableAndHideDropdown();
-    disableSliders();
-    disableButtons();
-    }
-    ///////////////////////
-  
+  // DISTINCT INSERTION SORT AND SHELL SORT
+
+    function playShellPlayInsert(sortAlgorithm) {
+      if(isSorting) return;
+      isSorting = true;
+      const copy = [...arr];
+      const moves = sortAlgorithm(copy);
+      animateShellInsert(moves);
+      disableAndHideDropdown();
+      disableSliders();
+      disableButtons();
+      }
 
 
 function displayBars(move){
@@ -61,6 +60,7 @@ function displayBars(move){
             bar.style.backgroundColor =
             move.moveType == "change" ? "green" : "red";
         }
+
         container.appendChild(bar);
     }
 }

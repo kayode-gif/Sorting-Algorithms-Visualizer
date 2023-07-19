@@ -17,7 +17,7 @@ function insertionSort(arr){
   }
   
   function playInsertionSort() {
-      playSortInsertionSort(insertionSort);
+      playShellPlayInsert(insertionSort);
     }
 
   

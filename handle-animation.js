@@ -30,8 +30,10 @@ function animate(moves) {
     }, getAnimationSpeed());
   }
 
-  // ANIMATE INSERTION SORT IS ON ITS OWN 
-  function animateInsertionSort(moves) {
+
+
+  // ANIMATE INSERTION SORT AND SHELL SORT
+  function animateShellInsert(moves) {
     if (moves.length === 0) {
       displayBars();
       isSorting = false;
@@ -52,10 +54,11 @@ function animate(moves) {
     playSound(MIN_FREQ+ arr[j] * MAX_FREQ);
     displayBars(move);
     setTimeout(function () {
-        animateInsertionSort(moves);
+        animateShellInsert(moves);
       }, getAnimationSpeed());
     }
-    //////////////
+
+
 
   function enableSliders(){
     const sizeInput = document.getElementById("change-size-bars");
