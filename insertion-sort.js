@@ -16,7 +16,7 @@ function insertionSort(arr){
     return moves;
   }
   
-  function playInsertionSort() {
+function playInsertionSort() {
       playShellPlayInsert(insertionSort);
     }
 

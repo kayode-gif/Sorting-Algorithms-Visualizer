@@ -1,6 +1,6 @@
 // This file is responsible for the changes to animation of the sorting 
 
-let animationSpeed = 10;
+let animationSpeed = 5;
 let audioSound = null;
 let audioEnabled = true;
 const MIN_FREQ = 200;
