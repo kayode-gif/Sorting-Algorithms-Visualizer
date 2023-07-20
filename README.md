@@ -12,4 +12,4 @@ Shell sort
 Gnome sort 
 Cocktail Shaker sort
 
-You can find the link to the sorting algotith: 
+You can find the link to the sorting algorithm: https://kayode-gif.github.io/Sorting-Algos-Visualiser/
