@@ -3,7 +3,7 @@
 Introducing My Sorting Visualiser! 
 I built this web application to practice my recent learns of javascript and also revise implementing sorting algorithms from scratch. I included popular and unpopular ones to see how various sorting algorithms behave when visualised.
 
-NOTE: This was done before knowledge of React and how classes operate in Javascript. 
+NOTE: This was done before knowledge of React (hencw why in vanilla JS). 
 
 These are the implemented algorithms below:
 
