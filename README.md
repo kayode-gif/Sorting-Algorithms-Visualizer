@@ -14,4 +14,4 @@ These are the implemented algorithms below:
 - Gnome Sort
 - Cocktail Shaker Sort
 
-You can find the link to the sorting algorithm: https://kayode-gif.github.io/Sorting-Algos-Visualiser/
+
